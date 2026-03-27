@@ -8,5 +8,7 @@ public interface CourseService {
 
     List<CourseResponseDto> getAllCourses();
 
+    CourseResponseDto getCourseById(Long id);
+
     CourseResponseDto createCourse(CourseRequestDto requestDto);
 }

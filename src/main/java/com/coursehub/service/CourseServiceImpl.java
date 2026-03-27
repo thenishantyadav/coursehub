@@ -3,6 +3,7 @@ package com.coursehub.service;
 import com.coursehub.dto.CourseRequestDto;
 import com.coursehub.dto.CourseResponseDto;
 import com.coursehub.entity.Course;
+import com.coursehub.exception.ResourceNotFoundException;
 import com.coursehub.repository.CourseRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -20,6 +21,14 @@ public class CourseServiceImpl implements CourseService {
                 .stream()
                 .map(this::mapToResponseDto)
                 .toList();
+    }
+
+    @Override
+    public CourseResponseDto getCourseById(Long id) {
+        Course course = courseRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Course not found with id: " + id));
+
+        return mapToResponseDto(course);
     }
 
     @Override
