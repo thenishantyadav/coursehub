@@ -23,7 +23,7 @@ public class CourseRequestDto {
     @Size(max = 500, message = "Description must not exceed 500 characters")
     private String description;
 
-    @NotBlank(message = "Instructor is required")
-    @Size(max = 120, message = "Instructor must not exceed 120 characters")
-    private String instructor;
+    @NotBlank(message = "Instructor name is required")
+    @Size(max = 120, message = "Instructor name must not exceed 120 characters")
+    private String instructorName;
 }

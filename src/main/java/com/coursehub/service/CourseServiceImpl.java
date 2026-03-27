@@ -36,7 +36,7 @@ public class CourseServiceImpl implements CourseService {
         Course course = Course.builder()
                 .title(requestDto.getTitle())
                 .description(requestDto.getDescription())
-                .instructor(requestDto.getInstructor())
+                .instructorName(requestDto.getInstructorName())
                 .build();
 
         Course savedCourse = courseRepository.save(course);
@@ -48,7 +48,7 @@ public class CourseServiceImpl implements CourseService {
                 .id(course.getId())
                 .title(course.getTitle())
                 .description(course.getDescription())
-                .instructor(course.getInstructor())
+                .instructorName(course.getInstructorName())
                 .build();
     }
 }

@@ -32,5 +32,5 @@ public class Course {
     private String description;
 
     @Column(nullable = false, length = 120)
-    private String instructor;
+    private String instructorName;
 }
