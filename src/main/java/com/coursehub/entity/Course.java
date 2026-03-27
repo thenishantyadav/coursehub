@@ -5,7 +5,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -33,4 +35,7 @@ public class Course {
 
     @Column(nullable = false, length = 120)
     private String instructorName;
+
+    @OneToMany(mappedBy = "course")
+    private List<Enrollment> enrollments;
 }

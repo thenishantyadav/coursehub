@@ -7,6 +7,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.util.Collection;
 import java.util.List;
@@ -44,6 +45,9 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 20)
     private Role role;
+
+    @OneToMany(mappedBy = "user")
+    private List<Enrollment> enrollments;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
