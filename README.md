@@ -1,7 +1,7 @@
 # CourseHub Backend
 
 CourseHub is a Spring Boot backend starter project built with Java 17 and Maven.
-
+swsiwjswijwnws
 ## Tech Stack
 
 - Java 17
