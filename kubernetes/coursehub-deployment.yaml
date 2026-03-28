@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: coursehub
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: coursehub
+  template:
+    metadata:
+      labels:
+        app: coursehub
+    spec:
+      containers:
+        - name: coursehub
+          image: your-dockerhub-username/coursehub:latest
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: coursehub-config
+            - secretRef:
+                name: coursehub-secret
+

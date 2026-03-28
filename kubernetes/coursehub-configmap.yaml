@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: coursehub-config
+data:
+  SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/coursehub_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+  SPRING_DATASOURCE_DRIVER_CLASS_NAME: com.mysql.cj.jdbc.Driver
+  SPRING_JPA_HIBERNATE_DDL_AUTO: update
+  SPRING_JPA_SHOW_SQL: "false"
+  SPRING_JPA_PROPERTIES_HIBERNATE_FORMAT_SQL: "true"
+  SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: org.hibernate.dialect.MySQLDialect
+  SERVER_PORT: "8080"
+  APPLICATION_SECURITY_JWT_EXPIRATION: "86400000"
+
